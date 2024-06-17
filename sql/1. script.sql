@@ -4,6 +4,16 @@ CREATE DATABASE IF NOT EXISTS la_frutita;
 
 USE la_frutita;
 
+-- Tabla usuario
+CREATE TABLE
+  usuario (
+    usuario_id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_usuario VARCHAR(50) NOT NULL,
+    contrasena VARCHAR(100) NOT NULL,
+    nombre_completo VARCHAR(100) NOT NULL,
+    rol VARCHAR(15) NOT NULL -- Administrador y Operador
+  );
+
 -- Tabla producto
 CREATE TABLE
   producto (
@@ -57,11 +67,19 @@ CREATE TABLE
 CREATE TABLE
   pedido (
     pedido_id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_pedido VARCHAR(20) UNIQUE,
+    medio_transporte_id INT,
+    transportista_id INT,
     fecha_pedido DATE NOT NULL,
     cliente_id INT,
     documento_id INT,
+    fecha_salida DATE NOT NULL,
+    fecha_llegada DATE NOT NULL,
+    estado VARCHAR(15) NOT NULL, -- En Transito y Entregado
     FOREIGN KEY (cliente_id) REFERENCES cliente (cliente_id),
-    FOREIGN KEY (documento_id) REFERENCES documento (documento_id)
+    FOREIGN KEY (documento_id) REFERENCES documento (documento_id),
+    FOREIGN KEY (medio_transporte_id) REFERENCES medio_transporte (medio_transporte_id),
+    FOREIGN KEY (transportista_id) REFERENCES transportista (transportista_id)
   );
 
 -- Tabla pedido_producto (detalle del pedido)
@@ -73,29 +91,4 @@ CREATE TABLE
     cantidad INT NOT NULL,
     FOREIGN KEY (pedido_id) REFERENCES pedido (pedido_id),
     FOREIGN KEY (producto_id) REFERENCES producto (producto_id)
-  );
-
--- Tabla usuario
-CREATE TABLE
-  usuario (
-    usuario_id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_usuario VARCHAR(50) NOT NULL,
-    contrasena VARCHAR(100) NOT NULL,
-    nombre_completo VARCHAR(100) NOT NULL,
-    rol VARCHAR(15) NOT NULL -- Administrador y Operador
-  );
-
--- Tabla pedido_transportado
-CREATE TABLE
-  pedido_transportado (
-    pedido_transportado_id INT AUTO_INCREMENT PRIMARY KEY,
-    pedido_id INT,
-    medio_transporte_id INT,
-    transportista_id INT,
-    fecha_salida DATE NOT NULL,
-    fecha_llegada DATE NOT NULL,
-    estado VARCHAR(15) NOT NULL, -- En Transito y Entregado
-    FOREIGN KEY (pedido_id) REFERENCES pedido (pedido_id),
-    FOREIGN KEY (medio_transporte_id) REFERENCES medio_transporte (medio_transporte_id),
-    FOREIGN KEY (transportista_id) REFERENCES transportista (transportista_id)
   );

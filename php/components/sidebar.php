@@ -30,9 +30,21 @@
       </a>
     </li>
     <li class="px-4 py-2 hover:px-5 hover:bg-slate-400 sidebar_link">
+      <a href="../layout/administrar-transportistas.php" class="flex">
+        <img src="../../assets/svg/users-menu.svg" alt="" class="pe-2">
+        <span class="text-lg">Transportista</span>
+      </a>
+    </li>
+    <li class="px-4 py-2 hover:px-5 hover:bg-slate-400 sidebar_link">
       <a href="../layout/administrar-documentos.php" class="flex">
         <img src="../../assets/svg/icon-document.svg" alt="" class="pe-2">
         <span class="text-lg">Documentos</span>
+      </a>
+    </li>
+    <li class="px-4 py-2 hover:px-5 hover:bg-slate-400 sidebar_link">
+      <a href="../layout/administrar-pedidos.php" class="flex">
+        <img src="../../assets/svg/rol-menu.svg" alt="" class="pe-2">
+        <span class="text-lg">Pedidos</span>
       </a>
     </li>
     <li class="px-4 py-2 hover:px-5 hover:bg-slate-400 sidebar_link">

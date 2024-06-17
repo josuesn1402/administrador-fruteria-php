@@ -1,14 +1,5 @@
 USE la_frutita;
 
--- Inserción de datos en la tabla tipo_documento
-INSERT INTO tipo_documento (descripcion)
-VALUES
-  ('Guía de Entrega'),
-  ('Guía de Pedido'),
-  ('Nota de Pedido'),
-  ('Boleta'),
-  ('Factura');
-
 -- Inserción de datos en la tabla cliente
 INSERT INTO cliente (nombre, direccion, telefono, email, tipo)
 VALUES
@@ -44,11 +35,11 @@ VALUES
   ('Transportista 2', '555555555', 'transportista2@correo.com');
 
 -- Inserción de datos en la tabla pedido
-INSERT INTO pedido (fecha_pedido, cliente_id, documento_id)
+INSERT INTO pedido (codigo_pedido, medio_transporte_id, transportista_id, fecha_pedido, cliente_id, documento_id, fecha_salida, fecha_llegada, estado)
 VALUES
-  ('2024-01-10', 1, 1),
-  ('2024-01-11', 2, 2),
-  ('2024-01-12', 3, 3);
+  ('PED0001', 1, 1, '2024-01-10', 1, 1, '2024-01-10', '2024-01-12', 'Entregado'),
+  ('PED0021', 2, 2, '2024-01-11', 2, 2, '2024-01-11', '2024-01-15', 'En Transito'),
+  ('PED0003', 3, 1, '2024-01-12', 3, 3, '2024-01-12', '2024-01-13', 'Entregado');
 
 -- Inserción de datos en la tabla pedido_producto
 INSERT INTO pedido_producto (pedido_id, producto_id, cantidad)
@@ -64,10 +55,3 @@ INSERT INTO usuario (nombre_usuario, contrasena, nombre_completo, rol)
 VALUES
   ('admin', 'admin123', 'Administrador Principal', 'Administrador'),
   ('operador1', 'operador123', 'Operador Uno', 'Operador');
-
--- Inserción de datos en la tabla pedido_transportado
-INSERT INTO pedido_transportado (pedido_id, medio_transporte_id, transportista_id, fecha_salida, fecha_llegada, estado)
-VALUES
-  (1, 1, 1, '2024-01-10', '2024-01-12', 'Entregado'),
-  (2, 2, 2, '2024-01-11', '2024-01-15', 'En Transito'),
-  (3, 3, 1, '2024-01-12', '2024-01-13', 'Entregado');
