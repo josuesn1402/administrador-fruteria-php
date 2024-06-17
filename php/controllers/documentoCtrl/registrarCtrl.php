@@ -2,14 +2,16 @@
 include '../../config/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $titulo = htmlspecialchars($_POST['titulo']);
-  $contenido = htmlspecialchars($_POST['contenido']);
+  $tipo = htmlspecialchars($_POST['tipo_documento']);
+  $numero = htmlspecialchars($_POST['numero']);
+  $fecha_emision = htmlspecialchars($_POST['fecha_emision']);
+  $monto = htmlspecialchars($_POST['monto']);
 
-  $sql = "INSERT INTO documento (titulo, contenido) VALUES (?, ?)";
+  $sql = "INSERT INTO documento (tipo_documento, numero, fecha_emision, monto) VALUES (?, ?, ?, ?)";
   if ($stmt = $conn->prepare($sql)) {
-    $stmt->bind_param("ss", $titulo, $contenido);
+    $stmt->bind_param("sssd", $tipo, $numero, $fecha_emision, $monto);
     if ($stmt->execute()) {
-      header("Location: ../../views/administrar-documentos.php?message=Documento registrado con éxito");
+      header("Location: ../../layout/administrar-documentos.php");
       exit();
     } else {
       echo "Error al registrar el documento: " . $stmt->error;
@@ -20,4 +22,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   $conn->close();
 }
-?>

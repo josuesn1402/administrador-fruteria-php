@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
   if ($stmt = $conn->prepare($sql)) {
     $stmt->bind_param("i", $idDocumento);
     if ($stmt->execute()) {
-      header("Location: ../../views/administrar-documentos.php?message=Documento eliminado con éxito");
+      header("Location: ../../layout/administrar-documentos.php");
       exit();
     } else {
       echo "Error al eliminar el documento: " . $stmt->error;
