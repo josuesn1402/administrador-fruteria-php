@@ -23,11 +23,7 @@
 <body class="font-roboto">
   <div class="flex min-h-screen">
     <div class="w-1/2 flex flex-col justify-center items-center bg-gray-100">
-      <div class="text-center mb-8">
-        <span class="text-4xl font-bold">A</span>
-        <p class="text-lg">Accede a tu gestión de almacén con facilidad y eficiencia</p>
-      </div>
-      <img src="assets/trigal-login.png" alt="Login Image" class="max-w-full">
+      <img src="../../assets/svg/undraw_security_re_a2rk.svg" alt="Login Image" class="w-3/4">
     </div>
     <div class="w-1/2 flex flex-col justify-center items-center">
       <form action="../controllers/loginController.php" method="POST" class="w-3/4">

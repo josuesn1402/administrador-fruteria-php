@@ -47,12 +47,12 @@
         <span class="text-lg">Pedidos</span>
       </a>
     </li>
-    <li class="px-4 py-2 hover:px-5 hover:bg-slate-400 sidebar_link">
+    <!-- <li class="px-4 py-2 hover:px-5 hover:bg-slate-400 sidebar_link">
       <a href="../layout/administrar-entregas.php" class="flex">
         <img src="../../assets/svg/icon-enviar.svg" alt="" class="pe-2">
         <span class="text-lg">Entrega de Productos</span>
       </a>
-    </li>
+    </li> -->
     <li class="px-4 py-2 hover:px-5 hover:bg-slate-400 sidebar_link">
       <a href="#" id="logoutLink" class="flex">
         <img src="../../assets/svg/back-door.svg" alt="" class="pe-2">
