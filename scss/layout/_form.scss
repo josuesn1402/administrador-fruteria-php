@@ -1,0 +1,83 @@
+// Estilos para el formulario de solicitud de pedido
+
+$h2-color: #333;
+$form-background: #f9f9f9;
+$input-background: #fff;
+$button-color: #fff;
+$button-background: #007bff;
+$button-hover-background: #0056b3;
+
+.form {
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+	color: $h2-color;
+	margin-bottom: 20px;
+	font-size: 2rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	justify-content: space-between;
+}
+
+.form-fieldset {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.field-info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-group label {
+	font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group button {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.form-group button {
+	background: #47330b;
+	color: white;
+	cursor: pointer;
+}
+
+.form-group button:hover {
+	background: #be7e00;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+.table th,
+.table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+}
+
+.table th {
+	background: #f4f4f4;
+}

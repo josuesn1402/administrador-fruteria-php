@@ -1,0 +1,19 @@
+section {
+	margin-left: 200px;
+	min-height: 100vh;
+	display: flex;
+}
+
+.section-inicio {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.inicio-container {
+	background-color: #8d5e00;
+	padding: 50px;
+	border-radius: 15px;
+	color: white;
+	margin: 50px;
+}

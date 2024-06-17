@@ -1,0 +1,183 @@
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ffeecc;
+}
+
+.login-container {
+	width: 60%;
+	height: 70%;
+	min-width: 650px;
+	display: flex;
+	border-radius: 15px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.login-left {
+	width: 55%;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 15px;
+	background: linear-gradient(to bottom, #be7e00, #47330b);
+	border-radius: 15px 0 0 15px;
+	box-shadow: 5px 0 5px rgba(0, 0, 0, 0.5);
+	z-index: 3;
+	overflow: hidden;
+}
+
+.login-left img {
+	width: 300px;
+	position: absolute;
+	left: -60px;
+	bottom: -110px;
+	opacity: 0.2;
+}
+
+.login-title span {
+	font-size: 40px;
+	color: white;
+	font-weight: 700;
+	text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-title p {
+	margin: 0;
+	margin-top: 10px;
+	color: white;
+	font-size: 18px;
+}
+
+.login-right {
+	width: 45%;
+	position: relative;
+	background-color: #d1ad64;
+	border-radius: 0 15px 15px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+
+.login-right form {
+	width: 70%;
+	margin: 50px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.login-right form p {
+	text-align: center;
+}
+
+.login-right form input {
+	background: transparent;
+	border: 2px solid rgb(109, 66, 1);
+	border-radius: 16px;
+	outline: none;
+	padding: 10px;
+	opacity: 0.5;
+}
+
+#user {
+	background: url("../assets/svg/user.svg") no-repeat left center;
+	background-size: 20px 20px;
+	background-position-x: 10px;
+}
+
+#user:focus {
+	background: transparent;
+}
+
+#user:focus::placeholder {
+	color: transparent; /* Hace que el color del placeholder sea transparente cuando el input está enfocado */
+}
+
+#pass {
+	background: url("../assets/svg/password.svg") no-repeat left center;
+	background-size: 20px 20px;
+	background-position-x: 10px;
+}
+
+#pass:focus {
+	background: transparent;
+}
+
+#pass:focus::placeholder {
+	color: transparent; /* Hace que el color del placeholder sea transparente cuando el input está enfocado */
+}
+
+.login-right form input::placeholder {
+	padding-left: 25px;
+	color: rgb(109, 66, 1);
+}
+
+.login-right form input:hover {
+	opacity: 1;
+}
+
+.form-title {
+	width: 100%;
+	text-align: start;
+}
+
+.form-title h1 {
+	font-size: 20px;
+	margin: 0;
+	margin-bottom: 10px;
+	font-weight: 800;
+	color: white;
+}
+
+.form-title p {
+	color: white;
+	font-size: 15px;
+	display: inline-block;
+	margin: 0;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.form-buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.form-login {
+	width: 100%;
+	border-radius: 30px;
+	padding: 12px;
+	background: rgb(109, 66, 1);
+	border: none;
+	cursor: pointer;
+	color: white;
+}
+
+.form-login:hover {
+	background: rgb(139, 97, 34);
+}
+
+.form-create {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.login-right a {
+	text-decoration: none;
+	color: gray;
+	padding-bottom: 3px;
+	border-bottom: 2px solid gray;
+}
