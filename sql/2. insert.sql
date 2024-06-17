@@ -17,18 +17,18 @@ VALUES
   ('Cliente 3', 'Direccion 3', '333333333', 'cliente3@correo.com', 'Local');
 
 -- Inserción de datos en la tabla producto
-INSERT INTO producto (nombre, tipo, fecha_ingreso, fecha_caducidad, precio)
+INSERT INTO producto (nombre, tipo, cantidad, precio)
 VALUES
-  ('Manzana', 'Local', '2024-01-01', '2024-01-15', 1.50),
-  ('Pera', 'Importado', '2024-01-01', '2024-01-20', 2.00),
-  ('Platano', 'Local', '2024-01-05', '2024-01-25', 1.20);
+  ('Manzana', 'Local', 12000, 1.50),
+  ('Pera', 'Importado', 22000, 2.00),
+  ('Platano', 'Local', 18000, 1.20);
 
 -- Inserción de datos en la tabla documento
-INSERT INTO documento (tipo_documento_id, numero, fecha_emision, monto)
+INSERT INTO documento (tipo_documento, numero, fecha_emision, monto)
 VALUES
-  (1, 'GE-001', '2024-01-10', 150.00),
-  (2, 'GP-001', '2024-01-10', 200.00),
-  (3, 'NP-001', '2024-01-11', 250.00);
+  ('Factura', 'GE-001', '2024-01-10', 150.00),
+  ('Boleta', 'GP-001', '2024-01-10', 200.00),
+  ('Factura', 'NP-001', '2024-01-11', 250.00);
 
 -- Inserción de datos en la tabla medio_transporte
 INSERT INTO medio_transporte (tipo, placa, capacidad)

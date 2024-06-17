@@ -10,8 +10,7 @@ CREATE TABLE
     producto_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     tipo VARCHAR(10) NOT NULL, -- Local y Importado
-    fecha_ingreso DATE NOT NULL,
-    fecha_caducidad DATE NOT NULL,
+    cantidad INT NOT NULL,
     precio DECIMAL(10, 2) NOT NULL
   );
 
@@ -26,22 +25,14 @@ CREATE TABLE
     tipo VARCHAR(10) NOT NULL -- Local y Provincial
   );
 
--- Tabla tipo_documento
-CREATE TABLE
-  tipo_documento (
-    tipo_documento_id INT AUTO_INCREMENT PRIMARY KEY,
-    descripcion VARCHAR(50) NOT NULL -- guía de entrega, guía de pedido, Nota de pedido, boleta y facturas
-  );
-
 -- Tabla documento
 CREATE TABLE
   documento (
     documento_id INT AUTO_INCREMENT PRIMARY KEY,
-    tipo_documento_id INT,
+    tipo_documento VARCHAR(50) NOT NULL,
     numero VARCHAR(50) NOT NULL,
     fecha_emision DATE NOT NULL,
-    monto DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (tipo_documento_id) REFERENCES tipo_documento (tipo_documento_id)
+    monto DECIMAL(10, 2) NOT NULL
   );
 
 -- Tabla medio_transporte
