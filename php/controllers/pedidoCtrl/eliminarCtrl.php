@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
   if ($stmt = $conn->prepare($sql)) {
     $stmt->bind_param("i", $idPedido);
     if ($stmt->execute()) {
-      header("Location: ../../views/administrar-pedidos.php?message=Pedido eliminado con éxito");
+      header("Location: ../../layout/administrar-pedidos.php");
       exit();
     } else {
       echo "Error al eliminar el pedido: " . $stmt->error;

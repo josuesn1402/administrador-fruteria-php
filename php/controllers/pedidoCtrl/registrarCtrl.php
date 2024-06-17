@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($stmt = $conn->prepare($sql)) {
     $stmt->bind_param("siisiisss", $codigo_pedido, $medio_transporte_id, $transportista_id, $fecha_pedido, $cliente_id, $documento_id, $fecha_salida, $fecha_llegada, $estado);
     if ($stmt->execute()) {
-      header("Location: ../../views/administrar-pedidos.php?message=Pedido registrado con éxito");
+      header("Location: ../../layout/administrar-pedidos.php");
       exit();
     } else {
       echo "Error al registrar el pedido: " . $stmt->error;
