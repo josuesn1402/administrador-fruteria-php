@@ -105,7 +105,11 @@ $resultTransportistas = mysqli_query($conn, $queryTransportistas);
         </div>
         <div class="flex flex-col">
           <label for="estado" class="mb-2">Estado:</label>
-          <input type="text" id="estado" name="estado" class="p-2 border rounded-lg" value="<?php echo $pedido['estado']; ?>" required>
+          <select id="estado" name="estado" class="p-2 border rounded-lg">
+            <option value="Pendiente" <?php if ($pedido['estado'] == 'Pendiente') echo 'selected'; ?>>Pendiente</option>
+            <option value="En Proceso" <?php if ($pedido['estado'] == 'En Proceso') echo 'selected'; ?>>En Proceso</option>
+            <option value="Completado" <?php if ($pedido['estado'] == 'Completado') echo 'selected'; ?>>Completado</option>
+          </select>
         </div>
       </div>
       <div class="grid gap-4">
