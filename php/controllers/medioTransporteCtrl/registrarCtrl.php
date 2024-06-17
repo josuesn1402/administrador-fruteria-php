@@ -3,13 +3,14 @@ include '../../config/connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $tipo = htmlspecialchars($_POST['tipo']);
-  $capacidad = htmlspecialchars($_POST['capacidad']);
+  $placa = htmlspecialchars($_POST['placa']);
+  $capacidad = intval($_POST['capacidad']);
 
-  $sql = "INSERT INTO medio_transporte (tipo, capacidad) VALUES (?, ?)";
+  $sql = "INSERT INTO medio_transporte (tipo, placa, capacidad) VALUES (?, ?, ?)";
   if ($stmt = $conn->prepare($sql)) {
-    $stmt->bind_param("ss", $tipo, $capacidad);
+    $stmt->bind_param("ssi", $tipo, $placa, $capacidad);
     if ($stmt->execute()) {
-      header("Location: ../../views/administrar-medio-transporte.php?message=Medio de transporte registrado con éxito");
+      header("Location: ../../layout/administrar-medio-transporte.php");
       exit();
     } else {
       echo "Error al registrar el medio de transporte: " . $stmt->error;
@@ -20,4 +21,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   $conn->close();
 }
-?>

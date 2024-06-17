@@ -4,13 +4,14 @@ include '../../config/connection.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $idTransporte = intval($_POST['id']);
   $tipo = htmlspecialchars($_POST['tipo']);
-  $capacidad = htmlspecialchars($_POST['capacidad']);
+  $placa = htmlspecialchars($_POST['placa']);
+  $capacidad = intval($_POST['capacidad']);
 
-  $sql = "UPDATE medio_transporte SET tipo = ?, capacidad = ? WHERE medio_id = ?";
+  $sql = "UPDATE medio_transporte SET tipo = ?, placa = ?, capacidad = ? WHERE medio_transporte_id = ?";
   if ($stmt = $conn->prepare($sql)) {
-    $stmt->bind_param("ssi", $tipo, $capacidad, $idTransporte);
+    $stmt->bind_param("ssii", $tipo, $placa, $capacidad, $idTransporte);
     if ($stmt->execute()) {
-      header("Location: ../../views/administrar-medio-transporte.php?message=Medio de transporte modificado con éxito");
+      header("Location: ../../layout/administrar-medio-transporte.php");
       exit();
     } else {
       echo "Error al modificar el medio de transporte: " . $stmt->error;
@@ -21,4 +22,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   $conn->close();
 }
-?>
